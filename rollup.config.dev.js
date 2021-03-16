@@ -1,49 +1,46 @@
-const path=require('path')
-const resolve = require('rollup-plugin-node-resolve')
-const commonjs = require('rollup-plugin-commonjs')
-const babel = require('rollup-plugin-babel')
-const json = require('rollup-plugin-json')
-const vue = require('rollup-plugin-vue')
-const postcss =require('rollup-plugin-postcss')
+const path = require("path");
+const resolve = require("rollup-plugin-node-resolve");
+const commonjs = require("rollup-plugin-commonjs");
+const babel = require("rollup-plugin-babel");
+const json = require("rollup-plugin-json");
+const vue = require("rollup-plugin-vue");
+const postcss = require("rollup-plugin-postcss");
 
+const inputPath = path.resolve(__dirname, "./src/index.js");
+const outputUmdPath = path.resolve(__dirname, "./dist/datav.libs.js");
+const outputEsPath = path.resolve(__dirname, "./dist/datav.libs.es.js");
+console.log(inputPath);
 
-const inputPath=path.resolve(__dirname,'./src/index.js')
-const outputUmdPath=path.resolve(__dirname,'./dist/datav.libs.js')
-const outputEsPath=path.resolve(__dirname,'./dist/datav.libs.es.js')
-console.log(inputPath)
-
-module.exports= {
+module.exports = {
   input: inputPath,
-  output:[
+  output: [
     {
-      file:outputUmdPath,
-      format:'umd',
-      name: 'rollupDatav',
+      file: outputUmdPath,
+      format: "umd",
+      name: "rollupDatav",
       globals: {
-        vue:'Vue'
-      }
+        vue: "Vue",
+      },
     },
     {
-      file:outputEsPath,
-      format: 'es',
-       globals: {
-        vue:'Vue'
-      }
-    }
+      file: outputEsPath,
+      format: "es",
+      globals: {
+        vue: "Vue",
+      },
+    },
   ],
-  plugins:[
+  plugins: [
     resolve(),
     vue(),
     commonjs(),
     babel({
-      exclude:'node_modules/**'
+      exclude: "node_modules/**",
     }),
     json(),
     postcss({
-      plugins:[]
-    })
+      plugins: [],
+    }),
   ],
-  external: [
-    'vue'
-  ]
-}
+  external: ["vue", "uuid"],
+};

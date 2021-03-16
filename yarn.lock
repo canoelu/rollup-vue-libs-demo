@@ -2559,7 +2559,8 @@ rgba-regex@^1.0.0:
   version "1.0.1"
   dependencies:
     "@babel/core" "^7.13.10"
-    rollup-datav-libs "file:C:/Users/86152/AppData/Local/Yarn/Cache/v6/npm-rollup-datav-libs-1.0.1-1b69b83c-ced2-4069-b5aa-c1bfd2498d61-1615804371561/node_modules/rollup-datav-libs"
+    "@vue/compiler-sfc" "^3.0.7"
+    rollup-datav-libs "file:C:/Users/86152/AppData/Local/Yarn/Cache/v6/npm-rollup-datav-libs-1.0.1-5cc99e85-1dd9-445c-ac30-4443f40c5429-1615887018063/node_modules/rollup-datav-libs"
 
 rollup-plugin-babel@^4.4.0:
   version "4.4.0"
@@ -2922,6 +2923,11 @@ util.promisify@~1.0.0:
     es-abstract "^1.17.2"
     has-symbols "^1.0.1"
     object.getownpropertydescriptors "^2.1.0"
+
+uuid@^8.3.2:
+  version "8.3.2"
+  resolved "https://registry.npm.taobao.org/uuid/download/uuid-8.3.2.tgz?cache=0&sync_timestamp=1607460081656&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fuuid%2Fdownload%2Fuuid-8.3.2.tgz#80d5b5ced271bb9af6c445f21a1a04c606cefbe2"
+  integrity sha1-gNW1ztJxu5r2xEXyGhoExgbO++I=
 
 vendors@^1.0.0:
   version "1.0.4"

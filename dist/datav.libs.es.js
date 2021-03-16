@@ -1,7 +1,7 @@
-import { ref, computed, pushScopeId, popScopeId, openBlock, createBlock, createTextVNode, toDisplayString, createVNode, withScopeId } from 'vue';
+import { ref, computed, pushScopeId, popScopeId, openBlock, createBlock, withScopeId, createVNode, renderSlot, onMounted, getCurrentInstance, createCommentVNode } from 'vue';
 
-var script$2 = {
-  name: 'TestComponent',
+var script$4 = {
+  name: "TestComponent",
   setup: function setup() {
     var message = "hello world";
     var count = ref(1);
@@ -21,34 +21,161 @@ var script$2 = {
   }
 };
 
-var _withId = /*#__PURE__*/withScopeId("data-v-7cc4288f");
+var _withId$1 = /*#__PURE__*/withScopeId("data-v-7cc4288f");
 
 pushScopeId("data-v-7cc4288f");
 
-var _hoisted_1 = {
+var _hoisted_1$3 = {
   "class": "test"
 };
 
-var _hoisted_2 = /*#__PURE__*/createVNode("br", null, null, -1
+var _hoisted_2$2 = /*#__PURE__*/createVNode("svg", {
+  width: "400",
+  height: "300",
+  viewBox: "0,0,40,30",
+  style: {
+    "border": "1px solid #cd0000"
+  }
+}, [/*#__PURE__*/createVNode("rect", {
+  x: "10",
+  y: "5",
+  width: "20",
+  height: "15",
+  fill: "#cd0000"
+})], -1
 /* HOISTED */
 );
 
-var _hoisted_3 = /*#__PURE__*/createVNode("br", null, null, -1
+var _hoisted_3$1 = /*#__PURE__*/createVNode("svg", {
+  width: "500",
+  height: "200",
+  viewBox: "0 0 50 20",
+  style: {
+    "border": "1px solid red"
+  }
+}, [/*#__PURE__*/createVNode("rect", {
+  x: "20",
+  y: "10",
+  width: "10",
+  height: "5",
+  stroke: "#000",
+  fill: "none"
+})], -1
+/* HOISTED */
+);
+
+var _hoisted_4 = /*#__PURE__*/createVNode("svg", {
+  width: "500",
+  height: "200",
+  style: {
+    "border": "1px solid red"
+  }
+}, [/*#__PURE__*/createVNode("line", {
+  x1: "10",
+  y1: "10",
+  x2: "80",
+  y2: "120",
+  stroke: "red",
+  "stroke-width": "2"
+}), /*#__PURE__*/createVNode("rect", {
+  x: "20",
+  y: "10",
+  width: "10",
+  height: "5",
+  stroke: "#000",
+  fill: "none"
+})], -1
+/* HOISTED */
+);
+
+var _hoisted_5 = /*#__PURE__*/createVNode("svg", {
+  width: "400",
+  height: "200",
+  viewBox: "0 0 200 200",
+  style: {
+    "border": "1px solid #cd0000"
+  },
+  preserveAspectRatio: "xMinYMin meet"
+}, [/*#__PURE__*/createVNode("rect", {
+  x: "10",
+  y: "10",
+  width: "150",
+  height: "150",
+  fill: "#cd0000"
+})], -1
+/* HOISTED */
+);
+
+var _hoisted_6 = /*#__PURE__*/createVNode("div", null, "preserveAspectRatio:xMinYMin meet-保持缩放比例", -1
+/* HOISTED */
+);
+
+var _hoisted_7 = /*#__PURE__*/createVNode("svg", {
+  width: "400",
+  height: "200",
+  viewBox: "0 0 200 300",
+  preserveAspectRatio: "xMinYMin meet",
+  style: {
+    "border": "1px solid #cd0000"
+  }
+}, [/*#__PURE__*/createVNode("rect", {
+  x: "10",
+  y: "10",
+  width: "150",
+  height: "150",
+  fill: "#cd0000"
+})], -1
+/* HOISTED */
+);
+
+var _hoisted_8 = /*#__PURE__*/createVNode("div", null, "preserveAspectRatio:xMinYMin slice-裁剪", -1
+/* HOISTED */
+);
+
+var _hoisted_9 = /*#__PURE__*/createVNode("svg", {
+  width: "400",
+  height: "200",
+  viewBox: "0 0 200 200",
+  preserveAspectRatio: "xMinYMin slice",
+  style: {
+    "border": "1px solid #cd0000"
+  }
+}, [/*#__PURE__*/createVNode("rect", {
+  x: "10",
+  y: "10",
+  width: "150",
+  height: "150",
+  fill: "#cd0000"
+})], -1
+/* HOISTED */
+);
+
+var _hoisted_10 = /*#__PURE__*/createVNode("div", null, "preserveAspectRatio:none-铺满", -1
+/* HOISTED */
+);
+
+var _hoisted_11 = /*#__PURE__*/createVNode("svg", {
+  width: "400",
+  height: "200",
+  viewBox: "0 0 200 200",
+  preserveAspectRatio: "none",
+  style: {
+    "border": "1px solid #cd0000"
+  }
+}, [/*#__PURE__*/createVNode("rect", {
+  x: "10",
+  y: "10",
+  width: "150",
+  height: "150",
+  fill: "#cd0000"
+})], -1
 /* HOISTED */
 );
 
 popScopeId();
 
-var render$2 = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data, $options) {
-  return openBlock(), createBlock("div", _hoisted_1, [createTextVNode("test " + toDisplayString($setup.message) + " ", 1
-  /* TEXT */
-  ), _hoisted_2, createTextVNode(" doubleCount:" + toDisplayString($setup.doubleCount) + " ", 1
-  /* TEXT */
-  ), _hoisted_3, createVNode("button", {
-    onClick: _cache[1] || (_cache[1] = function () {
-      return $setup.add && $setup.add.apply($setup, arguments);
-    })
-  }, "Add count")]);
+var render$4 = /*#__PURE__*/_withId$1(function (_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createBlock("div", _hoisted_1$3, [_hoisted_2$2, _hoisted_3$1, _hoisted_4, _hoisted_5, _hoisted_6, _hoisted_7, _hoisted_8, _hoisted_9, _hoisted_10, _hoisted_11]);
 });
 
 function styleInject(css, ref) {
@@ -81,54 +208,323 @@ function styleInject(css, ref) {
 var css_248z$2 = ".test[data-v-7cc4288f] {\n  color: red;\n}";
 styleInject(css_248z$2);
 
-script$2.render = render$2;
-script$2.__scopeId = "data-v-7cc4288f";
-script$2.__file = "src/components/Test/Test.vue";
+script$4.render = render$4;
+script$4.__scopeId = "data-v-7cc4288f";
+script$4.__file = "src/components/Test/Test.vue";
 
 function Test (Vue) {
-  Vue.component(script$2.name, script$2);
+  Vue.component(script$4.name, script$4);
 }
 
-var script$1 = {
+var script$3 = {
   name: 'TestComponent2'
 };
 
-function render$1(_ctx, _cache, $props, $setup, $data, $options) {
+function render$3(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createBlock("div", null, "Test2");
 }
 
 var css_248z$1 = "\r\n\r\n";
 styleInject(css_248z$1);
 
-script$1.render = render$1;
-script$1.__file = "src/components/Test2/Test2.vue";
+script$3.render = render$3;
+script$3.__file = "src/components/Test2/Test2.vue";
 
 function Test2 (Vue) {
+  Vue.component(script$3.name, script$3);
+}
+
+var script$2 = {
+  name: "ImoocLoading",
+  props: {
+    width: {
+      type: Number,
+      "default": 300
+    },
+    height: {
+      type: Number,
+      "default": 300
+    },
+    outSideColor: {
+      type: String,
+      "default": "#3be6cb"
+    },
+    innerColor: {
+      type: String,
+      "default": "#02bcfe"
+    },
+    duration: {
+      type: Number,
+      "default": 2
+    }
+  },
+  setup: function setup(ctx) {
+    var outsideAnimate = computed(function () {
+      return "".concat(ctx.outSideColor, ";").concat(ctx.innerColor, ";").concat(ctx.outSideColor);
+    });
+    var innerAnimate = computed(function () {
+      return "".concat(ctx.innerColor, ";").concat(ctx.outSideColor, ";").concat(ctx.innerColor);
+    });
+    return {
+      outsideAnimate: outsideAnimate,
+      innerAnimate: innerAnimate
+    };
+  }
+};
+
+var _hoisted_1$2 = {
+  "class": "imooc-loading"
+};
+var _hoisted_2$1 = {
+  "class": "loading-content"
+};
+function render$2(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createBlock("div", _hoisted_1$2, [(openBlock(), createBlock("svg", {
+    width: $props.width,
+    height: $props.height,
+    viewBox: "0 0 50 50",
+    preset: ""
+  }, [createVNode("circle", {
+    cx: "25",
+    cy: "25",
+    r: "22",
+    fill: "none",
+    stroke: $props.outSideColor,
+    "stroke-width": "3",
+    "stroke-dasharray": "34",
+    "stroke-linecap": "round"
+  }, [createVNode("animateTransform", {
+    attributeName: "transform",
+    type: "rotate",
+    repeatCount: "indefinite",
+    begin: "0s",
+    dur: "".concat($props.duration, "s"),
+    from: "0 25 25 ",
+    to: "360 25 25"
+  }, null, 8
+  /* PROPS */
+  , ["dur"]), createVNode("animate", {
+    attributeName: "stroke",
+    values: $setup.outsideAnimate,
+    dur: "4s",
+    repeatCount: "indefinite"
+  }, null, 8
+  /* PROPS */
+  , ["values"])], 8
+  /* PROPS */
+  , ["stroke"]), createVNode("circle", {
+    cx: "25",
+    cy: "25",
+    r: "12",
+    fill: "none",
+    stroke: $props.innerColor,
+    "stroke-dasharray": "19",
+    "stroke-width": "3",
+    "stroke-linecap": "round"
+  }, [createVNode("animateTransform", {
+    attributeName: "transform",
+    type: "rotate",
+    repeatCount: "indefinite",
+    begin: "0s",
+    dur: "".concat($props.duration, "s"),
+    values: "360 25 25;0 25 25"
+  }, null, 8
+  /* PROPS */
+  , ["dur"]), createVNode("animate", {
+    attributeName: "stroke",
+    values: $setup.innerAnimate,
+    dur: "4s",
+    repeatCount: "indefinite"
+  }, null, 8
+  /* PROPS */
+  , ["values"])], 8
+  /* PROPS */
+  , ["stroke"])], 8
+  /* PROPS */
+  , ["width", "height"])), createVNode("div", _hoisted_2$1, [renderSlot(_ctx.$slots, "default")])]);
+}
+
+script$2.render = render$2;
+script$2.__file = "src/components/ImoocLoading/ImoocLoading.vue";
+
+function ImoocLoading (Vue) {
+  Vue.component(script$2.name, script$2);
+}
+
+var script$1 = {
+  name: "ImoocFlybox",
+  props: {
+    lineColor: {
+      type: String,
+      "default": "#235fa7"
+    },
+    starColor: {
+      type: String,
+      "default": "#4fd2dd"
+    },
+    starLength: {
+      type: Number,
+      "default": 50
+    },
+    duration: {
+      type: Number,
+      "default": 3
+    }
+  },
+  setup: function setup(ctx) {
+    var uuid = "uuid" + Date.now();
+    var width = ref(0);
+    var height = ref(0);
+    var refName = "imoocFlyRef";
+    var pathId = "".concat(refName, "-path-").concat(uuid);
+    var gradientId = "".concat(refName, "-gradient-").concat(uuid);
+    var maskId = "".concat(refName, "-mask-").concat(uuid);
+    onMounted(function () {
+      var instance = getCurrentInstance();
+      var dom = instance.ctx.$refs[refName];
+      width.value = dom.clientWidth;
+      height.value = dom.clientHeight;
+    });
+    var path = computed(function () {
+      return "M5 5 L".concat(width.value - 5, " 5 L").concat(width.value - 5, " ").concat(height.value - 5, "  L5 ").concat(height.value - 5, " Z");
+    });
+    return {
+      width: width,
+      height: height,
+      refName: refName,
+      path: path,
+      pathId: pathId,
+      gradientId: gradientId,
+      maskId: maskId
+    };
+  }
+};
+
+var _withId = /*#__PURE__*/withScopeId("data-v-3cbc9c9f");
+
+pushScopeId("data-v-3cbc9c9f");
+
+var _hoisted_1$1 = /*#__PURE__*/createVNode("stop", {
+  offset: "0%",
+  "stop-color": "#fff",
+  "stop-opacity": "1"
+}, null, -1
+/* HOISTED */
+);
+
+var _hoisted_2 = /*#__PURE__*/createVNode("stop", {
+  offset: "100%",
+  "stop-color": "#fff",
+  "stop-opacity": "0"
+}, null, -1
+/* HOISTED */
+);
+
+var _hoisted_3 = {
+  "class": "fly-box-content"
+};
+
+popScopeId();
+
+var render$1 = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createBlock("div", {
+    "class": "fly-box",
+    ref: $setup.refName
+  }, [(openBlock(), createBlock("svg", {
+    "class": "fly-box-svg",
+    width: $setup.width,
+    height: $setup.height
+  }, [createVNode("defs", null, [createVNode("path", {
+    id: $setup.pathId,
+    d: $setup.path
+  }, null, 8
+  /* PROPS */
+  , ["id", "d"]), createCommentVNode("高光"), createVNode("radialGradient", {
+    cx: "50%",
+    cy: "50%",
+    fx: "100%",
+    fy: "50%",
+    r: "50%",
+    id: $setup.gradientId
+  }, [_hoisted_1$1, _hoisted_2], 8
+  /* PROPS */
+  , ["id"]), createVNode("mask", {
+    id: $setup.maskId
+  }, [createCommentVNode("流星的长度"), createVNode("circle", {
+    cx: "0",
+    cy: "0",
+    r: $props.starLength,
+    fill: "url(#".concat($setup.gradientId, ")")
+  }, [createVNode("animateMotion", {
+    dur: "".concat($props.duration, "s"),
+    path: $setup.path,
+    rotate: "auto",
+    repeatCount: "indefinite"
+  }, null, 8
+  /* PROPS */
+  , ["dur", "path"])], 8
+  /* PROPS */
+  , ["r", "fill"])], 8
+  /* PROPS */
+  , ["id"])]), createCommentVNode("边框"), createVNode("use", {
+    href: "#".concat($setup.pathId),
+    "stroke-width": "1",
+    stroke: $props.lineColor,
+    fill: "transparent"
+  }, null, 8
+  /* PROPS */
+  , ["href", "stroke"]), createCommentVNode("通过蒙版来实现流星color"), createVNode("use", {
+    href: "#".concat($setup.pathId),
+    "stroke-width": "2",
+    stroke: $props.starColor,
+    fill: "transparent",
+    mask: "url(#".concat($setup.maskId, ")")
+  }, null, 8
+  /* PROPS */
+  , ["href", "stroke", "mask"])], 8
+  /* PROPS */
+  , ["width", "height"])), createVNode("div", _hoisted_3, [renderSlot(_ctx.$slots, "default")])], 512
+  /* NEED_PATCH */
+  );
+});
+
+var css_248z = ".fly-box[data-v-3cbc9c9f] {\n  position: relative;\n  width: 100%;\n  height: 100%;\n}\n.fly-box[data-v-3cbc9c9f] svg[data-v-3cbc9c9f] {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n}\n.fly-box[data-v-3cbc9c9f] .fly-box-content[data-v-3cbc9c9f] {\n  width: 100%;\n  height: 100%;\n  padding: 5px;\n  box-sizing: border-box;\n}";
+styleInject(css_248z);
+
+script$1.render = render$1;
+script$1.__scopeId = "data-v-3cbc9c9f";
+script$1.__file = "src/components/ImoocFlyBox/ImoocFlybox.vue";
+
+function ImoocFlybox (Vue) {
   Vue.component(script$1.name, script$1);
 }
 
 var script = {
-  name: 'TestComponent3'
+  name: "ImoocContainer",
+  props: {},
+  setup: function setup(ctx) {}
 };
 
+var _hoisted_1 = {
+  id: "imoocContainer"
+};
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return openBlock(), createBlock("div", null, "Test3");
+  return openBlock(), createBlock("div", _hoisted_1, [renderSlot(_ctx.$slots, "default")]);
 }
 
-var css_248z = "\r\n\r\n";
-styleInject(css_248z);
-
 script.render = render;
-script.__file = "src/components/Test3/Test3.vue";
+script.__file = "src/components/Container/container.vue";
 
-function Test3 (Vue) {
+function Container (Vue) {
   Vue.component(script.name, script);
 }
 
 function index (Vue) {
   Vue.use(Test);
   Vue.use(Test2);
-  Vue.use(Test3);
+  Vue.use(Container);
+  Vue.use(ImoocLoading);
+  Vue.use(ImoocFlybox);
 }
 
 export default index;
